@@ -54,3 +54,8 @@
   height: 85%;
   background-color: rgba(49, 46, 46, 0.671);
 }
+
+.settingInfo,
+.profileInfo {
+  display: none;
+}

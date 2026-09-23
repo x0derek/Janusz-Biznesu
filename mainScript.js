@@ -1,11 +1,26 @@
-let tileButtons = document.getElementsByClassName("tile-button")
+const tileButtons = document.getElementsByClassName("tile-button");
+const popup = document.getElementById("popup");
+const mainScreen = document.getElementById("main-screen");
+const profileInfo = document.querySelector(".profileInfo");
+const settingInfo = document.querySelector(".settingInfo");
+
 for (let button of tileButtons) {
     button.addEventListener("click", (e) => {
-        document.getElementById("main-screen").style.filter = "blur(1.0rem)";
-        document.getElementById("popup").style.display = "block"
-    })
-    document.addEventListener("keydown", (e) => {
-        document.getElementById("main-screen").style.filter = "blur(0)"
-        document.getElementById("popup").style.display = "none"
-    })
+        mainScreen.style.filter = "blur(1.0rem)";
+        popup.style.display = "block";
+
+        profileInfo.style.display = "none";
+        settingInfo.style.display = "none";
+
+        if (button.name === "profile") {
+            profileInfo.style.display = "block";
+        } else if (button.name === "settings") {
+            settingInfo.style.display = "block";
+        }
+    });
 }
+
+document.addEventListener("keydown", (e) => {
+    mainScreen.style.filter = "blur(0)";
+    popup.style.display = "none";
+});
