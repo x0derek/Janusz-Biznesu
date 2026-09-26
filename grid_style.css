@@ -1,42 +1,155 @@
-.grid-container{
+@import url(grid_responsive/w760.css);
+@import url(grid_responsive/w440.css);
+
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     width: 100vw;
     height: 100vh;
-    gap: 15px;
-    padding: 15px;
+    gap: 10px;
+    padding: 10px;
 }
 
-.grid-item{
+.grid-item {
     background: #2a4365a8;
-    color:white;
+    color: white;
     border-radius: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.wielki{
-    grid-column: span 4;
-    grid-row: span 3;
-}
-
-.szeroki{
-    grid-column: span 3;
-}
-
-.szerszy{
-    grid-column: span 4;
-}
-
-.szeroki-gigant{
-    grid-column: span 3;
+.uzytkownik {
+    grid-column: span 6;
     grid-row: span 2;
 }
 
-.wysoki{
+.balans {
+    grid-column: span 2;
     grid-row: span 2;
+}
+
+.ksiegowy {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gielda {
+    grid-column: span 6;
+    grid-row: span 6;
+}
+
+.mieszkania {
+    grid-column: span 4;
+    grid-row: span 6;
+}
+
+.wydarzenia {
+    grid-column: span 4;
+    grid-row: span 4;
+}
+
+.bank {
+    grid-column: span 2;
+    grid-row: span 4;
+}
+
+.lista-uzytkownikow {
+    grid-column: span 4;
+    grid-row: span 4;
+}
+
+@media (max-width: 1032px) {
+    .uzytkownik {
+        grid-column: span 6;
+        grid-row: span 2;
+    }
+
+    .balans {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .ksiegowy {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gielda {
+        grid-column: span 5;
+        grid-row: span 8;
+    }
+
+    .mieszkania {
+        grid-column: span 5;
+        grid-row: span 6;
+    }
+
+    .wydarzenia {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .bank {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .lista-uzytkownikow {
+        grid-column: span 5;
+        grid-row: span 4;
+    }
+}
+
+@media (max-width: 440px) {
+    .grid-container{
+        grid-template-columns: repeat(20, 1fr);
+        grid-template-rows: repeat(24, 1fr);
+        gap: 7px;
+        padding: 7px;
+    }
+    .uzytkownik {
+        grid-column: span 20;
+        grid-row: span 2;
+    }
+
+    .balans {
+        grid-column: span 10;
+        grid-row: span 3;
+    }
+
+    .ksiegowy {
+        grid-column: span 10;
+        grid-row: span 3;
+    }
+
+    .gielda {
+        grid-column: span 20;
+        grid-row: span 6;
+    }
+
+    .mieszkania {
+        grid-column: span 20;
+        grid-row: span 6;
+    }
+
+    .wydarzenia {
+        grid-column: span 12;
+        grid-row: span 3;
+    }
+
+    .bank {
+        grid-column: span 8;
+        grid-row: span 3;
+    }
+
+    .lista-uzytkownikow {
+        grid-column: span 20;
+        grid-row: span 4;
+    }
 }
