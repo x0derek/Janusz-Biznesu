@@ -89,7 +89,24 @@
     font-weight: 700;
     margin-left: 4px;
 }
-@media (max-width: 450px) {
+
+@media (max-width: 850px) {
+    .balans {
+        gap: 9px;
+    }
+    .stan-label{
+        font-size: 1.35rem;
+    }
+    .stan-status{
+        font-size: 0.75rem;
+        padding: 4px 9px;
+    }
+    .balans-value{
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 750px) {
     .balans {
         gap: 8px;
     }
@@ -99,12 +116,6 @@
     .stan-status{
         font-size: 0.6rem;
         padding: 3px 6px;
-        border-radius: 20px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
     }
     .balans-value{
         font-size: 1.5rem;
@@ -121,12 +132,6 @@
     .stan-status{
         font-size: 0.5rem;
         padding: 3px 6px;
-        border-radius: 20px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
     }
     .balans-value{
         font-size: 1.3rem;
@@ -143,12 +148,6 @@
     .stan-status{
         font-size: 0.6rem;
         padding: 3px 6px;
-        border-radius: 20px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
     }
     .balans-value{
         font-size: 1.5rem;
@@ -165,12 +164,6 @@
     .stan-status{
         font-size: 0.5rem;
         padding: 3px 6px;
-        border-radius: 20px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
     }
     .balans-value{
         font-size: 1.3rem;
