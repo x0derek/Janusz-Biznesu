@@ -2,7 +2,7 @@ const tileButtons = document.getElementsByClassName("tile-button");
 const popup = document.getElementById("popup");
 const mainScreen = document.getElementById("main-screen");
 const profileInfo = document.querySelector(".profileInfo");
-const settingInfo = document.querySelector(".settingInfo");
+const settingInfo = document.querySelector(".stockInfo");
 
 for (let button of tileButtons) {
     button.addEventListener("click", (e) => {
@@ -14,7 +14,7 @@ for (let button of tileButtons) {
 
         if (button.name === "profile") {
             profileInfo.style.display = "block";
-        } else if (button.name === "settings") {
+        } else if (button.name === "stock") {
             settingInfo.style.display = "block";
         }
     });
