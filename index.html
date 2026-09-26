@@ -3,15 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <link rel="stylesheet" href="style.css">
     <script src="main_script.js"></script>
+    <script src="balans.js"></script>
     <title>Janusz_Biznesu</title>
 </head>
 
 <body>
     <section id="main_screen">
         <div class="grid-container">
+            <!-- uzytkownik -->
             <div class="grid-item uzytkownik">
                 <img src="player_pp.png" alt="player_pp">
                 <div class="user-info">
@@ -20,12 +23,27 @@
                 </div>
                 <button id="settings">⚙️</button>
             </div>
-            <div class="grid-item balans">BALANS</div>
+            <!-- balans -->
+            <div class="grid-item balans">
+                <div class="stan-konta">
+                    <span class="stan-label">Stan konta:</span>
+                    <span class="stan-status positive">12.4%</span>
+                </div>
+                <div class="balans-value">
+                    125 450 <span class="waluta">PLN</span>
+                </div>
+            </div>
+            <!-- ksiegowy -->
             <div class="grid-item ksiegowy">KSIĘGOWY</div>
+            <!-- lista uzytkownikow -->
             <div class="grid-item lista-uzytkownikow">LISTA UŻYTKOWNIKÓW</div>
+            <!-- gielda -->
             <div class="grid-item gielda">GIEŁDA</div>
+            <!-- mieszkania -->
             <div class="grid-item mieszkania">MIESZKANIA</div>
+            <!-- wydarzenia -->
             <div class="grid-item wydarzenia">WYDARZENIA</div>
+            <!-- bank -->
             <div class="grid-item bank">BANK</div>
         </div>
     </section>
