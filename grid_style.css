@@ -4,8 +4,14 @@
     grid-template-rows: repeat(12, 1fr);
     width: 100vw;
     height: 100vh;
+    height: 100dvh; /* pod Safari (viewport) */
     gap: 10px;
-    padding: 10px;
+    
+    /* pod Safari (marginesy) */
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
 }
 
 .grid-item {
@@ -20,6 +26,12 @@
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+    /* pod Safari */
+    min-width: 0;
+    min-height: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .uzytkownik {
@@ -105,12 +117,12 @@
 }
 
 @media (max-width: 440px) {
-    .grid-container{
+    .grid-container {
         grid-template-columns: repeat(20, 1fr);
         grid-template-rows: repeat(24, 1fr);
         gap: 7px;
-        padding: 7px;
     }
+
     .uzytkownik {
         grid-column: span 20;
         grid-row: span 2;
