@@ -2,3 +2,4 @@
 @import url(site_style.css);
 @import url(tiles/uzytkownik.css);
 @import url(tiles/balans.css);
+@import url(tiles/gielda.css); /* <-- DOŁĄCZONE */

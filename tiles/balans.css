@@ -7,7 +7,6 @@
     height: 100%;
     padding: 12px 16px;
     gap: 10px;
-    box-sizing: border-box;
 }
 
 .stan-konta {
@@ -55,7 +54,7 @@
 }
 
 .stan-status.negative {
-    background: #8a373733;
+    background: #e4575733;
     color: #f56565;
     border: 1px solid #993b3b4d;
 }
@@ -75,7 +74,7 @@
 .balans-value {
     font-size: 2rem;
     font-weight: 800;
-    color: #ffffff;
+    color: white;
     letter-spacing: -0.5px;
     white-space: nowrap;
     display: flex;
@@ -156,7 +155,7 @@
     }
 }
 
-@media (max-height: 360px) {
+@media (max-height: 380px) {
     .balans {
         gap: 0px;
     }
