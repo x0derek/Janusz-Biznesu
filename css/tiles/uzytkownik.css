@@ -36,9 +36,9 @@
 #settings {
     -webkit-appearance: none; /* Pod safari (wyłącza styl przycisków) */
     appearance: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff1a;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #ffffff33;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -52,17 +52,17 @@
 
 #settings:active {
     transform: scale(0.95);
-    background: rgba(255, 255, 255, 0.25);
+    background: #ffffff40;
 }
 
-@media (max-height: 860px) {
+@media (max-width: 880px) {
     .uzytkownik img {
         width: 50px;
         height: 50px;
     }
 
     .uzytkownik .user-name {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .uzytkownik .user-level {
@@ -73,6 +73,23 @@
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 730px) {
+    .uzytkownik img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .uzytkownik .user-name {
+        font-size: 1.3rem;
+    }
+
+    #settings {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
     }
 }
 

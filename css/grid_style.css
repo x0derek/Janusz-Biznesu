@@ -122,7 +122,7 @@
     }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 700px) {
     .grid-container {
         grid-template-columns: repeat(20, 1fr);
         grid-template-rows: repeat(24, 1fr);
