@@ -15,25 +15,25 @@
     -webkit-user-drag: none; /* Pod safari (wyłacza przeciąganie obrazka) */
 }
 
-.uzytkownik .user-info {
+.uzytkownik .uzytkownik-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
 }
 
-.uzytkownik .user-name {
+.uzytkownik .uzytkowwnik-nazwa {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-.uzytkownik .user-level {
+.uzytkownik .uzytkowwnik-poziom {
     font-size: 1.2rem;
     color: #cbd5e0;
     font-weight: normal;
 }
 
-#settings {
+#ustawienia {
     -webkit-appearance: none; /* Pod safari (wyłącza styl przycisków) */
     appearance: none;
     background: #ffffff1a;
@@ -50,7 +50,7 @@
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
-#settings:active {
+#ustawienia:active {
     transform: scale(0.95);
     background: #ffffff40;
 }
@@ -61,15 +61,15 @@
         height: 50px;
     }
 
-    .uzytkownik .user-name {
+    .uzytkownik .uzytkowwnik-nazwa {
         font-size: 1.4rem;
     }
 
-    .uzytkownik .user-level {
+    .uzytkownik .uzytkowwnik-poziom {
         font-size: 1rem;
     }
 
-    #settings {
+    #ustawienia {
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
@@ -82,11 +82,11 @@
         height: 40px;
     }
 
-    .uzytkownik .user-name {
+    .uzytkownik .uzytkowwnik-nazwa {
         font-size: 1.3rem;
     }
 
-    #settings {
+    #ustawienia {
         width: 35px;
         height: 35px;
         font-size: 1.3rem;
@@ -99,11 +99,11 @@
         height: 40px;
     }
 
-    .uzytkownik .user-name {
+    .uzytkownik .uzytkowwnik-nazwa {
         font-size: 1.3rem;
     }
 
-    #settings {
+    #ustawienia {
         width: 35px;
         height: 35px;
         font-size: 1.3rem;
@@ -116,15 +116,15 @@
         height: 40px;
     }
 
-    .uzytkownik .user-name {
+    .uzytkownik .uzytkowwnik-nazwa {
         font-size: 1rem;
     }
 
-    .uzytkownik .user-level {
+    .uzytkownik .uzytkowwnik-poziom {
         font-size: 0.8rem;
     }
 
-    #settings {
+    #ustawienia {
         width: 35px;
         height: 35px;
         font-size: 1.3rem;

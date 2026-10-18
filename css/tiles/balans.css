@@ -16,7 +16,7 @@
     width: 100%;
 }
 
-.stan-label {
+.stan-etykieta {
     font-size: 1.5rem;
     letter-spacing: 0.8px;
     color: #cbd5e0;
@@ -35,43 +35,43 @@
     line-height: 1;
 }
 
-.stan-status.positive {
+.stan-status.pozytywny {
     background: #48bb7833;
     color: #48bb78;
     border: 1px solid #48bb784d;
 }
 
-.stan-status.positive::before {
+.stan-status.pozytywny::before {
     content: "+ ";
     color: #48bb78;
     font-weight: bold;
 }
 
-.stan-status.positive::after {
+.stan-status.pozytywny::after {
     content: " ↑";
     color: #48bb78;
     font-weight: bold;
 }
 
-.stan-status.negative {
+.stan-status.negatywny {
     background: #e4575733;
     color: #f56565;
     border: 1px solid #993b3b4d;
 }
 
-.stan-status.negative::before {
+.stan-status.negatywny::before {
     content: "- ";
     color: #f56565;
     font-weight: bold;
 }
 
-.stan-status.negative::after {
+.stan-status.negatywny::after {
     content: " ↓";
     color: #f56565;
     font-weight: bold;
 }
 
-.balans-value {
+.balans-wartosc {
     font-size: 2rem;
     font-weight: 800;
     color: white;
@@ -83,7 +83,7 @@
     width: 100%;
 }
 
-.balans-value .waluta {
+.balans-wartosc .waluta {
     font-size: 1.3rem;
     color: #48bb78;
     font-weight: 700;
@@ -94,14 +94,14 @@
     .balans {
         gap: 9px;
     }
-    .stan-label{
+    .stan-etykieta{
         font-size: 1.35rem;
     }
     .stan-status{
         font-size: 0.75rem;
         padding: 4px 9px;
     }
-    .balans-value{
+    .balans-wartosc{
         font-size: 1.7rem;
     }
 }
@@ -110,14 +110,14 @@
     .balans {
         gap: 8px;
     }
-    .stan-label{
+    .stan-etykieta{
         font-size: 1.2rem;
     }
     .stan-status{
         font-size: 0.6rem;
         padding: 3px 6px;
     }
-    .balans-value{
+    .balans-wartosc{
         font-size: 1.5rem;
     }
 }
@@ -126,14 +126,14 @@
     .balans {
         gap: 5px;
     }
-    .stan-label{
+    .stan-etykieta{
         font-size: 1rem;
     }
     .stan-status{
         font-size: 0.5rem;
         padding: 3px 6px;
     }
-    .balans-value{
+    .balans-wartosc{
         font-size: 1.3rem;
     }
 }
@@ -142,14 +142,14 @@
     .balans {
         gap: 5px;
     }
-    .stan-label{
+    .stan-etykieta{
         font-size: 1.2rem;
     }
     .stan-status{
         font-size: 0.6rem;
         padding: 3px 6px;
     }
-    .balans-value{
+    .balans-wartosc{
         font-size: 1.5rem;
     }
 }
@@ -158,14 +158,14 @@
     .balans {
         gap: 0px;
     }
-    .stan-label{
+    .stan-etykieta{
         font-size: 1rem;
     }
     .stan-status{
         font-size: 0.5rem;
         padding: 3px 6px;
     }
-    .balans-value{
+    .balans-wartosc{
         font-size: 1.3rem;
     }
 }

@@ -1,7 +1,7 @@
 // NI CHUJA NIE WIEM CO TU SIE DZIEJE NIE OGARNIAM GIELDY TO BYL SZYBKI PROMPT ZEBY ZOBACZYC JAK TO BEDZE WYGLADAC
 
 document.addEventListener('DOMContentLoaded', function () {
-    const canvas = document.getElementById('gieldaCanvas');
+    const canvas = document.getElementById('gielda-tlo');
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');

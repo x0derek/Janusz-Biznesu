@@ -5,21 +5,21 @@
     gap: 6px;
 }
 
-.gielda-header {
+.gielda-naglowek {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.gielda-label {
+.gielda-etykieta {
     font-size: 1.5rem;
     font-weight: 700;
     color: #cbd5e0;
     letter-spacing: 0.5px;
 }
 
-.gielda-boxes {
+.gielda-kontenery {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -36,12 +36,12 @@
     line-height: 1;
 }
 
-.gielda-buttons {
+.gielda-przyciski {
     display: flex;
     gap: 8px;
 }
 
-.btn-trade {
+.przycisk-wymiana {
     -webkit-appearance: none;
     appearance: none;
     border: 1px solid transparent;
@@ -55,30 +55,30 @@
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
-.btn-trade:active {
+.przycisk-wymiana:active {
     transform: scale(0.93);
 }
 
-.btn-kup {
+.przycisk-kup {
     background: #48bb7833;
     color: #48bb78;
     border: 1px solid #48bb784d;
 }
 
-.btn-sprzedaj {
+.przycisk-sprzedaj {
     background: #e4575733;
     color: #f56565;
     border: 1px solid #993b3b4d;
 }
 
-.gielda-chart-wrapper {
+.gielda-wyglad {
     flex-grow: 1;
     width: 100%;
     height: 90%;
 }
 
 @media (max-width: 900px) {
-    .gielda-label{
+    .gielda-etykieta{
         font-size: 1.5rem;
     }
 
@@ -87,14 +87,14 @@
         padding: 6px 10px;
     }
 
-    .btn-trade{
+    .przycisk-wymiana{
         font-size: 0.9rem;
         padding: 6px 10px;
     }
 }
 
 @media (max-width: 700px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 
@@ -103,14 +103,14 @@
         padding: 6px 10px;
     }
 
-    .btn-trade {
+    .przycisk-wymiana {
         font-size: 0.7rem;
         padding: 6px 10px;
     }
 }
 
 @media (max-width: 600px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 
@@ -119,14 +119,14 @@
         padding: 4px 6px;
     }
 
-    .btn-trade {
+    .przycisk-wymiana {
         font-size: 0.7rem;
         padding: 4px 6px;
     }
 }
 
 @media (max-width: 400px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 
@@ -135,14 +135,14 @@
         padding: 6px 10px;
     }
 
-    .btn-trade {
+    .przycisk-wymiana {
         font-size: 0.7rem;
         padding: 6px 10px;
     }
 }
 
 @media (max-height: 440px) {
-    .gielda-label{
+    .gielda-etykieta{
         font-size: 1.5rem;
     }
 
@@ -151,14 +151,14 @@
         padding: 6px 10px;
     }
 
-    .btn-trade{
+    .przycisk-wymiana{
         font-size: 0.9rem;
         padding: 6px 10px;
     }
 }
 
 @media (max-height: 400px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 
@@ -167,7 +167,7 @@
         padding: 6px 10px;
     }
 
-    .btn-trade {
+    .przycisk-wymiana {
         font-size: 0.7rem;
         padding: 6px 10px;
     }
