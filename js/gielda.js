@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Lista pracowników generujących pasywny dochód
-    let pracownicy = [
-        { nazwa: "Amanda Ryc", poziom: 2, stawkaZaPoziom: 0.2 } // PLN na sekundę za 1 poziom
-    ];
-
     let aktualnyRynek = "KRYPTO";
     const bazowyCzas = Date.now();
 
@@ -148,12 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function generujKolejneSwiece() {
-        // 1. Naliczanie zysku od pracowników (pasywny dochód)
-        pracownicy.forEach(p => {
-            portfelGracza.gotowka += p.poziom * p.stawkaZaPoziom;
-        });
-
-        // 2. Aktualizacja świec giełdowych
         Object.keys(konfiguracjaRynkow).forEach(rynek => {
             const daneSwiec = daneRynkow[rynek];
             const ostatniaSwieca = daneSwiec[daneSwiec.length - 1];
