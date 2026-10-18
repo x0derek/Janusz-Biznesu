@@ -108,13 +108,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function aktualizujInterfejs() {
         const cashEl = document.getElementById('player-cash');
-        if (cashEl) cashEl.innerText = portfelGracza.gotowka.toFixed(2);
+        if (cashEl) cashEl.innerText = portfelGracza.gotowka.toLocaleString('pl-PL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
         const procentZysku = ((portfelGracza.gotowka - poczatkowaGotowka) / poczatkowaGotowka) * 100;
         const procentEl = document.getElementById('stan-procent');
         if (procentEl) {
-            procentEl.innerText = (procentZysku >= 0 ? "+" : "") + procentZysku.toFixed(1) + "%";
-            procentEl.className = "stan-status " + (procentZysku >= 0 ? "positive" : "negative");
+            procentEl.innerText = Math.abs(procentZysku).toFixed(1) + "%";
+            procentEl.className = "stan-status " + (procentZysku >= 0 ? "pozytywny" : "negatywny");
         }
 
         const currentSymbolEl = document.getElementById('current-symbol');

@@ -25,7 +25,7 @@
     border-radius: 50%;
     object-fit: contain;
     border: 2px solid #ffffff44;
-    -webkit-drag: none; /* Pod safari (wyłacza przeciąganie obrazka) */
+    -webkit-user-drag: none; /* Pod safari (wyłacza przeciąganie obrazka) */
 }
 
 .info {

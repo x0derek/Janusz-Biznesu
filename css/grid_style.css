@@ -18,6 +18,7 @@
 }
 
 .grid-item {
+    position: relative; /* .tile-button jest absolute - bez tego pokrywa cały ekran */
     background: #2a4365a8;
     color: white;
     border-radius: 10px;

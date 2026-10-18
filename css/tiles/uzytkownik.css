@@ -22,12 +22,12 @@
     flex-grow: 1;
 }
 
-.uzytkownik .uzytkowwnik-nazwa {
+.uzytkownik .uzytkownik-nazwa {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-.uzytkownik .uzytkowwnik-poziom {
+.uzytkownik .uzytkownik-poziom {
     font-size: 1.2rem;
     color: #cbd5e0;
     font-weight: normal;
@@ -61,11 +61,11 @@
         height: 50px;
     }
 
-    .uzytkownik .uzytkowwnik-nazwa {
+    .uzytkownik .uzytkownik-nazwa {
         font-size: 1.4rem;
     }
 
-    .uzytkownik .uzytkowwnik-poziom {
+    .uzytkownik .uzytkownik-poziom {
         font-size: 1rem;
     }
 
@@ -82,7 +82,7 @@
         height: 40px;
     }
 
-    .uzytkownik .uzytkowwnik-nazwa {
+    .uzytkownik .uzytkownik-nazwa {
         font-size: 1.3rem;
     }
 
@@ -99,7 +99,7 @@
         height: 40px;
     }
 
-    .uzytkownik .uzytkowwnik-nazwa {
+    .uzytkownik .uzytkownik-nazwa {
         font-size: 1.3rem;
     }
 
@@ -116,11 +116,11 @@
         height: 40px;
     }
 
-    .uzytkownik .uzytkowwnik-nazwa {
+    .uzytkownik .uzytkownik-nazwa {
         font-size: 1rem;
     }
 
-    .uzytkownik .uzytkowwnik-poziom {
+    .uzytkownik .uzytkownik-poziom {
         font-size: 0.8rem;
     }
 
