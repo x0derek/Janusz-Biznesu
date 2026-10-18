@@ -30,51 +30,60 @@
                 <button id="settings">⚙️</button>
                 <button name="setting" class="tile-button"></button>
             </div>
-            <!-- balans -->
+
             <div class="grid-item balans">
                 <button name="balance" class="tile-button"></button>
                 <div class="stan-konta">
                     <span class="stan-label">Stan konta:</span>
-                    <span class="stan-status positive">12.4%</span>
+                    <span id="stan-procent" class="stan-status positive">0.0%</span>
                 </div>
                 <div class="balans-value">
-                    125 450 <span class="waluta">PLN</span>
+                    <span id="player-cash">100.00</span> <span class="waluta">PLN</span>
                 </div>
             </div>
-            <!-- ksiegowy -->
+
             <div class="grid-item ksiegowy">KSIĘGOWY<button name="accountant" class="tile-button"></button></div>
-            <!-- lista uzytkownikow -->
             <div class="grid-item lista-uzytkownikow">LISTA UŻYTKOWNIKÓW<button name="people"
                     class="tile-button"></button></div>
 
-            <!-- gielda z czystym nagłówkiem i dyskretnymi przyciskami -->
             <div class="grid-item gielda">
-                <button name="stock" class="tile-button"></button>
                 <div class="gielda-header">
                     <span class="gielda-label">Giełda:</span>
-                    <div class="gielda-boxes">
-                        <span class="gielda-symbol">GOLD</span>
-                        <div class="gielda-buttons">
-                            <button class="btn-trade btn-kup">KUP</button>
-                            <button class="btn-trade btn-sprzedaj">SPRZEDAJ</button>
+                    <div class="gielda-tabs-wrapper">
+                        <div class="gielda-tabs">
+                            <button class="btn-tab active" data-market="KRYPTO">Krypto</button>
+                            <button class="btn-tab" data-market="GOLD">Złoto</button>
+                            <button class="btn-tab" data-market="KGHM">Akcje</button>
                         </div>
                     </div>
                 </div>
+
+                <div class="market-control-panel">
+                    <div class="market-info">
+                        <span id="current-symbol" class="gielda-symbol">KRYPTO</span>
+                        <div class="user-info">
+                            Posiadasz: <span id="user-has">0</span> | Śr. cena: <span id="user-price">0.00</span> PLN
+                        </div>
+                    </div>
+                    <div class="gielda-buttons">
+                        <input type="number" id="trade-amount" value="1" min="1" class="trade-input">
+                        <button class="btn-trade btn-kup" id="action-buy">KUP</button>
+                        <button class="btn-trade btn-sprzedaj" id="action-sell">SPRZEDAJ</button>
+                    </div>
+                </div>
+
                 <div class="gielda-chart-wrapper">
                     <canvas id="gieldaCanvas"></canvas>
                 </div>
             </div>
 
-            <!-- mieszkania -->
             <div class="grid-item mieszkania">MIESZKANIA<button name="estate" class="tile-button"></button></div>
-            <!-- wydarzenia -->
             <div class="grid-item wydarzenia">WYDARZENIA<button name="events" class="tile-button"></button></div>
-            <!-- bank -->
             <div class="grid-item bank">BANK<button name="bank" class="tile-button"></button></div>
         </div>
-
     </section>
-    <div id="popup">
+
+    <div id="popup" style="display:none;">
         <div class="generalInfo">
             <h2>Informacje</h2>
         </div>

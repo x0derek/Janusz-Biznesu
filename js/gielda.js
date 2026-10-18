@@ -1,26 +1,75 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const poczatkowaGotowka = 100.00;
+    let portfelGracza = {
+        gotowka: poczatkowaGotowka,
+        aktywa: {
+            KRYPTO: { ilosc: 0, sredniaCena: 0 },
+            ZLOTO: { ilosc: 0, sredniaCena: 0 },
+            KGHM: { ilosc: 0, sredniaCena: 0 }
+        }
+    };
 
-    // Dane początkowe
-    const baseTime = Date.now();
-    const candleData = [
-        { x: baseTime - 5 * 600, o: 100, h: 108, l: 98, c: 105 },
-        { x: baseTime - 4 * 600, o: 105, h: 107, l: 99, c: 101 },
-        { x: baseTime - 3 * 600, o: 101, h: 103, l: 90, c: 92 },
-        { x: baseTime - 2 * 600, o: 92, h: 96, l: 80, c: 95 },
-        { x: baseTime - 1 * 600, o: 95, h: 106, l: 94, c: 104 },
-        { x: baseTime, o: 104, h: 112, l: 102, c: 110 }
-    ];
+    let aktualnyRynek = "KRYPTO";
+    const bazowyCzas = Date.now();
 
-    // Wykłes
-    function createChart(canvas) {
-        if (!canvas) return null;
+    const konfiguracjaRynkow = {
+        KRYPTO: {
+            etykieta: 'KRYPTO (PLN)',
+            bazowaCena: 10,
+            zmiennosc: 12,
+            tendencja: 0.02,
+            opor: 0.05
+        },
+        ZLOTO: {
+            etykieta: 'ZŁOTO (PLN/oz)',
+            bazowaCena: 250,
+            zmiennosc: 3,
+            tendencja: 0.005,
+            opor: 0.01
+        },
+        KGHM: {
+            etykieta: 'KGHM (PLN)',
+            bazowaCena: 50,
+            zmiennosc: 6,
+            tendencja: 0.01,
+            opor: 0.03
+        }
+    };
 
-        return new Chart(canvas.getContext('2d'), {
+    const daneRynkow = {};
+    Object.keys(konfiguracjaRynkow).forEach(rynek => {
+        daneRynkow[rynek] = [];
+        const config = konfiguracjaRynkow[rynek];
+        let poprzednieZamkniecie = config.bazowaCena;
+
+        for (let i = 25; i >= 0; i--) {
+            let otwarcie = poprzednieZamkniecie;
+
+            const odlegloscOdCenyBazowej = (otwarcie - config.bazowaCena) / config.bazowaCena;
+            const procentZmiany = (Math.random() - 0.5) * (config.zmiennosc / 100) + config.tendencja - (odlegloscOdCenyBazowej * config.opor);
+
+            let zamkniecie = Math.max(1, parseFloat((otwarcie * (1 + procentZmiany)).toFixed(2)));
+            let maksimum = parseFloat((Math.max(otwarcie, zamkniecie) + (Math.random() * (otwarcie * (config.zmiennosc / 300)))).toFixed(2));
+            let minimum = parseFloat((Math.min(otwarcie, zamkniecie) - (Math.random() * (otwarcie * (config.zmiennosc / 300)))).toFixed(2));
+
+            daneRynkow[rynek].push({
+                x: bazowyCzas - i * 1000,
+                o: otwarcie, h: maksimum, l: minimum, c: zamkniecie
+            });
+            poprzednieZamkniecie = zamkniecie;
+        }
+    });
+
+    function utworzWykres(idKanwy) {
+        const kanwa = document.getElementById(idKanwy);
+        if (!kanwa) return null;
+
+        return new Chart(kanwa.getContext('2d'), {
             type: 'candlestick',
             data: {
                 datasets: [{
-                    label: 'JANUSZ_COIN (PLN)',
-                    data: candleData,
+                    label: konfiguracjaRynkow[aktualnyRynek].etykieta,
+                    data: daneRynkow[aktualnyRynek],
                     color: {
                         up: '#48bb78',
                         down: '#f56565',
@@ -36,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 scales: {
                     x: {
                         type: 'time',
-                        time: { unit: 'minute' },
+                        time: { unit: 'second', displayFormats: { second: 'HH:mm:ss' } },
                         ticks: { color: 'rgba(255, 255, 255, 0.6)', font: { size: 10 } },
                         grid: { color: 'rgba(255, 255, 255, 0.05)' }
                     },
@@ -49,53 +98,118 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // genełate wykłes
-    const canvasMain = document.getElementById('gieldaCanvas');
-    const canvasPopup = document.getElementById('gieldaCanvasPopup');
+    let wykresGlowny = utworzWykres('gieldaCanvas');
+    let wykresPopup = utworzWykres('gieldaCanvasPopup');
 
-    window.gieldaChartMain = createChart(canvasMain);
-    window.gieldaChartPopup = createChart(canvasPopup);
+    function aktualizujInterfejs() {
+        document.getElementById('player-cash').innerText = portfelGracza.gotowka.toFixed(2);
 
-    // refresz the wykłes
-    function updateCharts() {
-        if (window.gieldaChartMain) window.gieldaChartMain.update('none');
-        if (window.gieldaChartPopup) window.gieldaChartPopup.update('none');
+        const procentZysku = ((portfelGracza.gotowka - poczatkowaGotowka) / poczatkowaGotowka) * 100;
+        const procentEl = document.getElementById('stan-procent');
+        procentEl.innerText = (procentZysku >= 0 ? "+" : "") + procentZysku.toFixed(1) + "%";
+        procentEl.className = "stan-status " + (procentZysku >= 0 ? "positive" : "negative");
+
+        document.getElementById('current-symbol').innerText = aktualnyRynek;
+        document.getElementById('user-has').innerText = portfelGracza.aktywa[aktualnyRynek].ilosc;
+        document.getElementById('user-price').innerText = portfelGracza.aktywa[aktualnyRynek].sredniaCena.toFixed(2);
     }
 
-    // nowa "Świece" - ten pacholeczek 
-    function generateNextCandle() {
-        const lastCandle = candleData[candleData.length - 1];
+    document.querySelectorAll('.btn-tab').forEach(zakladka => {
+        zakladka.addEventListener('click', function () {
+            document.querySelector('.btn-tab.active').classList.remove('active');
+            this.classList.add('active');
 
-        // miesjce nowej swieczki
-        const openPrice = lastCandle.c;
-        const change = (Math.random() - 0.47) * 6;
-        const closePrice = Math.max(1, parseFloat((openPrice + change).toFixed(2)));
+            aktualnyRynek = this.getAttribute('data-market');
 
-        // Wyznaczenie maksimów i minimów (knoty świecy)
-        const highPrice = parseFloat((Math.max(openPrice, closePrice) + Math.random() * 2).toFixed(2));
-        const lowPrice = parseFloat((Math.min(openPrice, closePrice) - Math.random() * 2).toFixed(2));
+            if (wykresGlowny) {
+                wykresGlowny.data.datasets[0].label = konfiguracjaRynkow[aktualnyRynek].etykieta;
+                wykresGlowny.data.datasets[0].data = daneRynkow[aktualnyRynek];
+                wykresGlowny.update('none');
+            }
+            if (wykresPopup) {
+                wykresPopup.data.datasets[0].label = konfiguracjaRynkow[aktualnyRynek].etykieta;
+                wykresPopup.data.datasets[0].data = daneRynkow[aktualnyRynek];
+                wykresPopup.update('none');
+            }
+            aktualizujInterfejs();
+        });
+    });
 
-        // Nowy punkt w czasie
-        const nextTime = lastCandle.x + 600;
+    function generujKolejneSwiece() {
+        Object.keys(konfiguracjaRynkow).forEach(rynek => {
+            const daneSwiec = daneRynkow[rynek];
+            const ostatniaSwieca = daneSwiec[daneSwiec.length - 1];
+            const config = konfiguracjaRynkow[rynek];
 
-        // Dotanie nowej świecy do tablicy
-        candleData.push({
-            x: nextTime,
-            o: openPrice,
-            h: highPrice,
-            l: lowPrice,
-            c: closePrice
+            const cenaOtwarcia = ostatniaSwieca.c;
+
+            const odlegloscOdCenyBazowej = (cenaOtwarcia - config.bazowaCena) / config.bazowaCena;
+            const procentZmiany = (Math.random() - 0.5) * (config.zmiennosc / 100) + config.tendencja - (odlegloscOdCenyBazowej * config.opor);
+
+            const cenaZamkniecia = Math.max(1, parseFloat((cenaOtwarcia * (1 + procentZmiany)).toFixed(2)));
+            const cenaMaksymalna = parseFloat((Math.max(cenaOtwarcia, cenaZamkniecia) + (Math.random() * (cenaOtwarcia * (config.zmiennosc / 400)))).toFixed(2));
+            const cenaMinimalna = parseFloat((Math.min(cenaOtwarcia, cenaZamkniecia) - (Math.random() * (cenaOtwarcia * (config.zmiennosc / 400)))).toFixed(2));
+
+            daneSwiec.push({
+                x: ostatniaSwieca.x + 1000,
+                o: cenaOtwarcia, h: cenaMaksymalna, l: cenaMinimalna, c: cenaZamkniecia
+            });
+
+            if (daneSwiec.length > 40) {
+                daneSwiec.shift();
+            }
         });
 
-        // Umax 30 swuieczusek
-        if (candleData.length > 30) {
-            candleData.shift();
-        }
-
-        updateCharts();
+        if (wykresGlowny) wykresGlowny.update('none');
+        if (wykresPopup) wykresPopup.update('none');
+        aktualizujInterfejs();
     }
+    setInterval(generujKolejneSwiece, 1000);
 
-    // Uruchomienie symulacji - nowa świeca co 0.6 sekundy
-    setInterval(generateNextCandle, 600);
-    window.updateGieldaCharts = updateCharts;
+    document.getElementById('action-buy').addEventListener('click', function () {
+        const ilosc = parseInt(document.getElementById('trade-amount').value);
+        if (isNaN(ilosc) || ilosc <= 0) return;
+
+        const aktualneDane = daneRynkow[aktualnyRynek];
+        const aktualnaCena = aktualneDane[aktualneDane.length - 1].c;
+        const calkowityKoszt = ilosc * aktualnaCena;
+
+        if (portfelGracza.gotowka >= calkowityKoszt) {
+            portfelGracza.gotowka -= calkowityKoszt;
+
+            const aktualneAktywo = portfelGracza.aktywa[aktualnyRynek];
+            const nowaIlosc = aktualneAktywo.ilosc + ilosc;
+            aktualneAktywo.sredniaCena = ((aktualneAktywo.ilosc * aktualneAktywo.sredniaCena) + calkowityKoszt) / nowaIlosc;
+            aktualneAktywo.ilosc = nowaIlosc;
+
+            aktualizujInterfejs();
+        } else {
+            alert("Brak srodków uzbiearj więcej hajsu");
+        }
+    });
+
+    document.getElementById('action-sell').addEventListener('click', function () {
+        const ilosc = parseInt(document.getElementById('trade-amount').value);
+        if (isNaN(ilosc) || ilosc <= 0) return;
+
+        const aktualneAktywo = portfelGracza.aktywa[aktualnyRynek];
+
+        if (aktualneAktywo.ilosc >= ilosc) {
+            const aktualneDane = daneRynkow[aktualnyRynek];
+            const aktualnaCena = aktualneDane[aktualneDane.length - 1].c;
+
+            portfelGracza.gotowka += ilosc * aktualnaCena;
+            aktualneAktywo.ilosc -= ilosc;
+
+            if (aktualneAktywo.ilosc === 0) {
+                aktualneAktywo.sredniaCena = 0;
+            }
+
+            aktualizujInterfejs();
+        } else {
+            alert("Nie masz akcji na sprzedaż");
+        }
+    });
+
+    aktualizujInterfejs();
 });
