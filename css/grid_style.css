@@ -74,7 +74,7 @@
     grid-row: span 4;
 }
 
-.lista-uzytkownikow {
+.pracownicy {
     grid-column: span 4;
     grid-row: span 4;
 }
@@ -116,7 +116,7 @@
         grid-row: span 2;
     }
 
-    .lista-uzytkownikow {
+    .pracownicy {
         grid-column: span 5;
         grid-row: span 4;
     }
@@ -164,7 +164,7 @@
         grid-row: span 3;
     }
 
-    .lista-uzytkownikow {
+    .pracownicy {
         grid-column: span 20;
         grid-row: span 4;
     }

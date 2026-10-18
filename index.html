@@ -2,12 +2,12 @@
 <html lang="pl">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="js/mainScript.js" defer></script>
-    <script src="js/gielda.js" defer></script>
+    <!-- Biblioteki Chart.js (do wykresów) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script
@@ -15,37 +15,48 @@
     <script
         src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.0/dist/chartjs-chart-financial.min.js"></script>
 
+    <script src="js/main_script.js"></script>
+    <script src="js/gielda.js"></script>
     <title>Janusz_Biznesu</title>
 </head>
 
 <body>
-    <section id="main_screen">
+    <section id="glowny_widok">
         <div class="grid-container">
-            <div class="grid-item uzytkownik" style="position: relative;">
-                <img src="player_pp.png" alt="player_pp">
-                <div class="user-info">
-                    <div class="user-name">Janusz Karaś</div>
-                    <div class="user-level">Lvl: 67</div>
+            <!-- uzytkownik -->
+            <div class="grid-item uzytkownik">
+                <img src="/obrazy/pracownicy/w-man-brown.svg" alt="uzytkownik_pp">
+                <div class="uzytkownik-info">
+                    <div class="uzytkowwnik-nazwa">Janusz Karaś</div>
+                    <div class="uzytkowwnik-poziom">Poziom: 67</div>
                 </div>
-                <button id="settings">⚙️</button>
-                <button name="setting" class="tile-button"></button>
+                <button id="ustawienia">⚙️</button>
             </div>
 
             <div class="grid-item balans">
-                <button name="balance" class="tile-button"></button>
                 <div class="stan-konta">
-                    <span class="stan-label">Stan konta:</span>
-                    <span id="stan-procent" class="stan-status positive">0.0%</span>
+                    <span class="stan-etykieta">Stan konta:</span>
+                    <span class="stan-status pozytywny">12.4%</span>
                 </div>
-                <div class="balans-value">
-                    <span id="player-cash">100.00</span> <span class="waluta">PLN</span>
+                <div class="balans-wartosc">
+                    125 450 <span class="waluta">PLN</span>
+                </div>
+            </div>
+            <!-- ksiegowy -->
+            <div class="grid-item ksiegowy">KSIĘGOWY</div>
+            <!-- lista pracownikow -->
+            <div class="grid-item pracownicy">
+                <div class="pracownik">
+                    <img src="/obrazy/pracownicy/b-woman-ginger.svg" alt="pracownik_pp">
+                    <div class="info">
+                        <div class="nazwa">Amanda Ryc</div>
+                        <div class="poziom">Poziom: 2</div>
+                    </div>
+                    <button class="ustawienia">⚙️</button>
                 </div>
             </div>
 
-            <div class="grid-item ksiegowy">KSIĘGOWY<button name="accountant" class="tile-button"></button></div>
-            <div class="grid-item lista-uzytkownikow">LISTA UŻYTKOWNIKÓW<button name="people"
-                    class="tile-button"></button></div>
-
+            <!-- gielda -->
             <div class="grid-item gielda">
                 <div class="gielda-header">
                     <span class="gielda-label">Giełda:</span>
@@ -77,28 +88,14 @@
                 </div>
             </div>
 
-            <div class="grid-item mieszkania">MIESZKANIA<button name="estate" class="tile-button"></button></div>
-            <div class="grid-item wydarzenia">WYDARZENIA<button name="events" class="tile-button"></button></div>
-            <div class="grid-item bank">BANK<button name="bank" class="tile-button"></button></div>
+            <!-- mieszkania -->
+            <div class="grid-item mieszkania">MIESZKANIA</div>
+            <!-- wydarzenia -->
+            <div class="grid-item wydarzenia">WYDARZENIA</div>
+            <!-- bank -->
+            <div class="grid-item bank">BANK</div>
         </div>
     </section>
-
-    <div id="popup" style="display:none;">
-        <div class="generalInfo">
-            <h2>Informacje</h2>
-        </div>
-        <div class="settingInfo">
-            <h3>Ustawienia gry</h3>
-            <p>Tutaj możesz zmienić opcje programu.</p>
-        </div>
-        <div class="stockInfo">
-            <div class="grid-item gielda">
-                <div class="gielda-chart-wrapper">
-                    <canvas id="gieldaCanvasPopup"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

@@ -89,9 +89,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         ticks: { color: 'rgba(255, 255, 255, 0.6)', font: { size: 10 } },
                         grid: { color: 'rgba(255, 255, 255, 0.05)' }
                     },
-                    y: {
-                        ticks: { color: 'rgba(255, 255, 255, 0.6)', font: { size: 10 } },
-                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.05)'
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: 'rgba(255, 255, 255, 0.6)',
+                        font: { size: 10 }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.05)'
                     }
                 }
             }
