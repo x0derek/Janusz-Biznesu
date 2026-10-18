@@ -10,7 +10,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     border: 2px solid #ffffff44;
     -webkit-user-drag: none; /* Pod safari (wyłacza przeciąganie obrazka) */
 }
