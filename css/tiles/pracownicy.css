@@ -46,7 +46,7 @@
     font-weight: normal;
 }
 
-.ustawienia {
+.pracownik-ustawienia {
     -webkit-appearance: none; /* Pod safari (wyłącza styl przycisków) */
     appearance: none;
     background: #ffffff1a;
@@ -63,7 +63,7 @@
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
-.ustawienia:active {
+.pracownik-ustawienia:active {
     transform: scale(0.95);
     background: #ffffff40;
 }
@@ -82,7 +82,7 @@
         font-size: 1rem;
     }
 
-    .ustawienia {
+    .pracownik-ustawienia {
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
@@ -99,7 +99,7 @@
         font-size: 1.3rem;
     }
 
-    .ustawienia {
+    .pracownik-ustawienia {
         width: 35px;
         height: 35px;
         font-size: 1.3rem;
@@ -116,7 +116,7 @@
         font-size: 1.3rem;
     }
 
-    .ustawienia {
+    .pracownik-ustawienia {
         width: 35px;
         height: 35px;
         font-size: 1.3rem;
@@ -137,7 +137,7 @@
         font-size: 0.8rem;
     }
 
-    .ustawienia {
+    .pracownik-ustawienia {
         width: 35px;
         height: 35px;
         font-size: 1.3rem;

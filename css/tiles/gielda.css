@@ -16,7 +16,7 @@
     width: 100%;
 }
 
-.gielda-label {
+.gielda-etykieta {
     font-size: 1.3rem;
     font-weight: 700;
     color: #cbd5e0;
@@ -170,7 +170,7 @@
 }
 
 @media (max-width: 900px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1.5rem;
     }
 
@@ -186,7 +186,7 @@
 }
 
 @media (max-width: 700px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 
@@ -202,7 +202,7 @@
 }
 
 @media (max-width: 600px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 
@@ -218,7 +218,7 @@
 }
 
 @media (max-width: 400px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 
@@ -234,7 +234,7 @@
 }
 
 @media (max-height: 440px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1.5rem;
     }
 
@@ -250,7 +250,7 @@
 }
 
 @media (max-height: 400px) {
-    .gielda-label {
+    .gielda-etykieta {
         font-size: 1rem;
     }
 

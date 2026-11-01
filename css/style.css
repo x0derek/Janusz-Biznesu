@@ -1,7 +1,12 @@
-@import url(popup.css);
 @import url(grid_style.css);
 @import url(site_style.css);
+
+/* KAFELKI */
 @import url(tiles/uzytkownik.css);
 @import url(tiles/balans.css);
 @import url(tiles/gielda.css);
 @import url(tiles/pracownicy.css);
+
+/* POPUPY */
+@import url(popup.css);
+@import url(popups/uzytkownik-popup.css);

@@ -1,0 +1,132 @@
+#uzytkownik-popup {
+    /* PODSTAWOWE USTAWIENIA */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 90%;
+    background-color: #324f77ee;
+    color: white;
+    border-radius: 10px;
+}
+
+.popup-info {
+    margin: 2%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.popup-etykieta{
+    font-size: 1.5rem;
+    letter-spacing: 0.8px;
+    color: #cbd5e0;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.popup-info .popup-etykieta {
+    grid-column: 2;
+}
+
+.popup-info .wyjdz {
+    grid-column: 3;
+    justify-self: end;
+}
+
+/* TO ZROBIL CLAUDE BO NIE WIEDZIALEM CO I JAK ZROBIC *TRZEBA PRZEEDYTOWAC* */
+
+.popup-tresc {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    margin: 0 2% 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.popup-sekcja {
+    background: #ffffff0f;
+    border: 1px solid #ffffff1a;
+    border-radius: 10px;
+    padding: 6px 14px;
+}
+
+.popup-naglowek {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a0aec0;
+    padding: 8px 0 4px;
+}
+
+.popup-wiersz {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 48px;               /* wygodne pod palec na iPadzie */
+    border-bottom: 1px solid #ffffff14;
+    font-size: 1rem;
+}
+.popup-wiersz:last-child { border-bottom: none; }
+
+.popup-input {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #1a202c;
+    color: white;
+    border: 1px solid #4a5568;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    min-width: 140px;
+    outline: none;
+}
+.popup-input:focus { border-color: #487ebb; }
+
+.popup-przycisk {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #487ebb;
+    color: white;
+    border: 1px solid #3182ce;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.popup-przycisk:active { transform: scale(0.96); }
+
+.popup-przycisk--groza {
+    background: #f56565;
+    border-color: #e53e3e;
+}
+
+/* przełącznik bez JS */
+.przelacznik { position: relative; display: inline-block; width: 46px; height: 26px; }
+.przelacznik input { opacity: 0; width: 0; height: 0; }
+.przelacznik-suwak {
+    position: absolute; inset: 0;
+    background: #4a5568;
+    border-radius: 26px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.przelacznik-suwak::before {
+    content: "";
+    position: absolute;
+    width: 20px; height: 20px;
+    left: 3px; top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+.przelacznik input:checked + .przelacznik-suwak { background: #48bb78; }
+.przelacznik input:checked + .przelacznik-suwak::before { transform: translateX(20px); }
+
+/* DODAJ RESPONSYWNOSC */

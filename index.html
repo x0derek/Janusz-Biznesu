@@ -15,23 +15,22 @@
     <script
         src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.0/dist/chartjs-chart-financial.min.js"></script>
 
-    <script src="js/main_script.js"></script>
+    <script src="js/popupy/uzytkownik-popup.js"></script>
     <script src="js/gielda.js"></script>
     <title>Janusz_Biznesu</title>
 </head>
 
 <body>
-    <section id="main_screen">
+    <section id="strona-glowna">
         <div class="grid-container">
             <!-- uzytkownik -->
             <div class="grid-item uzytkownik">
-                <button name="setting" class="tile-button"></button>
                 <img src="obrazy/pracownicy/w-man-brown.svg" alt="uzytkownik_pp">
                 <div class="uzytkownik-info">
                     <div class="uzytkownik-nazwa">Janusz Karaś</div>
                     <div class="uzytkownik-poziom">Poziom: 67</div>
                 </div>
-                <button id="ustawienia" name="setting">⚙️</button>
+                <button class="uzytkownik-ustawienia" name="setting">⚙️</button>
             </div>
 
             <div class="grid-item balans">
@@ -53,15 +52,15 @@
                         <div class="nazwa">Amanda Ryc</div>
                         <div class="poziom">Poziom: 2</div>
                     </div>
-                    <button class="ustawienia">⚙️</button>
+                    <button class="pracownik-ustawienia">⚙️</button>
                 </div> -->
             </div>
 
             <!-- gielda -->
             <div class="grid-item gielda">
-                <button name="stock" class="tile-button"></button>
+                <!-- <button name="stock" class="tile-button"></button> -->
                 <div class="gielda-naglowek">
-                    <span class="gielda-label">Giełda:</span>
+                    <span class="gielda-etykieta">Giełda:</span>
                     <div class="gielda-tabs-wrapper">
                         <div class="gielda-tabs">
                             <button class="btn-tab active" data-market="KRYPTO">Krypto</button>
@@ -99,11 +98,84 @@
         </div>
     </section>
 
-    <div id="popup">
-        <button id="popup-close" aria-label="Zamknij">✕</button>
-        <div class="settingInfo">Ustawienia</div>
-        <div class="stockInfo">
-            <canvas id="gieldaCanvasPopup"></canvas>
+    <div id="uzytkownik-popup">
+        <div class="popup-info">
+            <span class="popup-etykieta">Ustawienia użytkownika</span>
+            <button class="wyjdz" id="uzytkownik-wyjdz">❌</button>
+        </div>
+        <!-- TO ZROBIL CLAUDE BO NIE WIEDZIALEM CO I JAK ZROBIC *TRZEBA PRZEEDYTOWAC* -->
+        <div class="popup-tresc">
+
+            <section class="popup-sekcja">
+                <h3 class="popup-naglowek">Profil</h3>
+                <div class="popup-wiersz">
+                    <span>Zdjęcie profilowe</span>
+                    <button class="popup-przycisk">Zmień</button>
+                </div>
+                <div class="popup-wiersz">
+                    <label for="ustaw-nazwa">Nazwa użytkownika</label>
+                    <input type="text" id="ustaw-nazwa" class="popup-input" value="Janusz Karaś" maxlength="20">
+                </div>
+                <div class="popup-wiersz">
+                    <label for="ustaw-nazwa">Nazwa użytkownika</label>
+                    <input type="text" id="ustaw-nazwa" class="popup-input" value="Janusz Karaś" maxlength="20">
+                </div>
+            </section>
+
+            <section class="popup-sekcja">
+                <h3 class="popup-naglowek">Gra</h3>
+                <div class="popup-wiersz">
+                    <label for="ustaw-waluta">Waluta</label>
+                    <select id="ustaw-waluta" class="popup-input">
+                        <option>PLN</option>
+                        <option>EUR</option>
+                        <option>USD</option>
+                    </select>
+                </div>
+                <div class="popup-wiersz">
+                    <label for="ustaw-tempo">Tempo giełdy</label>
+                    <select id="ustaw-tempo" class="popup-input">
+                        <option>Wolne</option>
+                        <option selected>Normalne</option>
+                        <option>Szybkie</option>
+                    </select>
+                </div>
+                <div class="popup-wiersz">
+                    <span>Potwierdzaj transakcje</span>
+                    <label class="przelacznik">
+                        <input type="checkbox" checked>
+                        <span class="przelacznik-suwak"></span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="popup-sekcja">
+                <h3 class="popup-naglowek">Wygląd</h3>
+                <div class="popup-wiersz">
+                    <label for="ustaw-motyw">Motyw</label>
+                    <select id="ustaw-motyw" class="popup-input">
+                        <option>Granatowy</option>
+                        <option>Ciemny</option>
+                        <option>Jasny</option>
+                    </select>
+                </div>
+                <div class="popup-wiersz">
+                    <span>Animacje</span>
+                    <label class="przelacznik">
+                        <input type="checkbox" checked>
+                        <span class="przelacznik-suwak"></span>
+                    </label>
+                </div>
+            </section>
+
+            <section class="popup-sekcja">
+                <h3 class="popup-naglowek">Dane</h3>
+                <div class="popup-wiersz">
+                    <span>Reset gry</span>
+                    <button class="popup-przycisk popup-przycisk--groza">Resetuj</button>
+                </div>
+            </section>
+
         </div>
     </div>
 </body>
