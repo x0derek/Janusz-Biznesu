@@ -1,0 +1,30 @@
+.bank {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+}
+
+.bank img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.bank-etykieta{
+    margin-top: 3%;
+    font-size: 1.5rem;
+    letter-spacing: 0.8px;
+    color: #cbd5e0;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* CALA RESPONSYWNOSC DO ZROBIENIA I WSM TO CALA RESZTA JESZCZE!! */
