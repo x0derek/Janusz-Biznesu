@@ -4,8 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 15px 15px;
-    gap: 15px;
+    gap: 10px;
     min-height: 0;
     box-sizing: border-box; 
 }
@@ -14,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 15px;
+    padding: 15px;
     gap: 15px;
     width: 100%;
 }
@@ -66,6 +65,10 @@
 .pracownik-ustawienia:active {
     transform: scale(0.95);
     background: #ffffff40;
+}
+
+.pracownik:nth-child(even){
+    background-color: #314b70a8;
 }
 
 @media (max-width: 880px) {
