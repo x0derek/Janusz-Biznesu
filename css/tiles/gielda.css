@@ -214,6 +214,29 @@
     }
 }
 
+@media (max-height: 1200px){
+    .gielda-etykieta{
+        font-size: 2rem;
+    }
+
+    .zakladka-przyciskow{
+        font-size: 1rem;
+        padding: 7px 12px;
+    }
+
+    .gielda-cena, .uzytkownik-gielda-info{
+        font-size: 1.5rem;
+    }
+
+    .wymiana-input{
+        width: 140px;
+        font-size: 1.2rem;
+    }
+    .wymiana-przycisk{
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-height: 1030px){
     .gielda-etykieta{
         font-size: 1.5rem;
