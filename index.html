@@ -32,7 +32,7 @@
                 </div>
                 <button class="uzytkownik-ustawienia" name="setting">⚙️</button>
             </div>
-
+            <!-- balans -->
             <div class="grid-item balans">
                 <div class="stan-konta">
                     <span class="stan-etykieta">Stan konta:</span>
@@ -46,14 +46,14 @@
             <div class="grid-item ksiegowy">KSIĘGOWY</div>
             <!-- lista pracownikow -->
             <div class="grid-item pracownicy">
-                <!-- <div class="pracownik">
+                <div class="pracownik">
                     <img src="obrazy/pracownicy/b-woman-ginger.svg" alt="pracownik_pp">
                     <div class="info">
                         <div class="nazwa">Amanda Ryc</div>
                         <div class="poziom">Poziom: 2</div>
                     </div>
                     <button class="pracownik-ustawienia">⚙️</button>
-                </div> -->
+                </div>
             </div>
 
             <!-- gielda -->
@@ -61,26 +61,24 @@
                 <!-- <button name="stock" class="tile-button"></button> -->
                 <div class="gielda-naglowek">
                     <span class="gielda-etykieta">Giełda:</span>
-                    <div class="gielda-tabs-wrapper">
-                        <div class="gielda-tabs">
-                            <button class="btn-tab active" data-market="KRYPTO">Krypto</button>
-                            <button class="btn-tab" data-market="ZLOTO">Złoto</button>
-                            <button class="btn-tab" data-market="KGHM">Akcje</button>
+                    <div class="gielda-zakladki-wrapper">
+                        <div class="gielda-zakladki">
+                            <button class="zakladka-przyciskow active" data-market="KRYPTO">Krypto</button>
+                            <button class="zakladka-przyciskow" data-market="ZLOTO">Złoto</button>
+                            <button class="zakladka-przyciskow" data-market="KGHM">Akcje</button>
                         </div>
                     </div>
+                    <span class="gielda-cena">Cena: <span id="user-price">0.00</span> PLN</span>
                 </div>
-
-                <div class="market-control-panel">
-                    <div class="market-info">
-                        <span id="current-symbol" class="gielda-symbol">KRYPTO</span>
-                        <div class="user-info">
-                            Posiadasz: <span id="user-has">0</span> | Śr. cena: <span id="user-price">0.00</span> PLN
+                
+                <div class="panel-kontrolny-marketu">
+                    <div class="uzytkownik-gielda-info">
+                        <span>Posiadasz: <span id="user-has">0</span></span>
                         </div>
-                    </div>
-                    <div class="gielda-buttons">
-                        <input type="number" id="trade-amount" value="1" min="1" class="trade-input">
-                        <button class="btn-trade przycisk-wymiana btn-kup" id="action-buy">KUP</button>
-                        <button class="btn-trade przycisk-wymiana btn-sprzedaj" id="action-sell">SPRZEDAJ</button>
+                    <div class="gielda-przyciski">
+                        <input type="number" id="wymiana-amount" value="1" min="1" class="wymiana-input">
+                        <button class="przycisk-wymiana wymiana-przycisk przycisk-kup" id="action-buy">KUP</button>
+                        <button class="przycisk-wymiana wymiana-przycisk przycisk-sprzedaj" id="action-sell">SPRZEDAJ</button>
                     </div>
                 </div>
 

@@ -80,49 +80,6 @@
     grid-row: span 4;
 }
 
-/* iPady / Tablety w orientacji pionowej */
-@media (max-width: 1032px) {
-    .uzytkownik {
-        grid-column: span 4;
-        grid-row: span 2;
-    }
-
-    .balans {
-        grid-column: span 3;
-        grid-row: span 2;
-    }
-
-    .ksiegowy {
-        grid-column: span 3;
-        grid-row: span 2;
-    }
-
-    .gielda {
-        grid-column: span 5;
-        grid-row: span 8;
-    }
-
-    .mieszkania {
-        grid-column: span 5;
-        grid-row: span 6;
-    }
-
-    .wydarzenia {
-        grid-column: span 3;
-        grid-row: span 2;
-    }
-
-    .bank {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-
-    .pracownicy {
-        grid-column: span 5;
-        grid-row: span 4;
-    }
-}
-
 @media (max-width: 700px) {
     .grid-container {
         grid-template-columns: repeat(20, 1fr);

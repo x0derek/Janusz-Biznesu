@@ -114,27 +114,10 @@
         font-size: 1.2rem;
     }
     .stan-status{
-        font-size: 0.6rem;
         padding: 3px 6px;
     }
     .balans-wartosc{
         font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .balans {
-        gap: 5px;
-    }
-    .stan-etykieta{
-        font-size: 1rem;
-    }
-    .stan-status{
-        font-size: 0.5rem;
-        padding: 3px 6px;
-    }
-    .balans-wartosc{
-        font-size: 1.3rem;
     }
 }
 
@@ -151,6 +134,24 @@
     }
     .balans-wartosc{
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 410px){
+    .stan-status{
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .balans {
+        gap: 5px;
+    }
+    .stan-etykieta{
+        font-size: 1rem;
+    }
+    .balans-wartosc{
+        font-size: 1.3rem;
     }
 }
 

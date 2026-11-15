@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
             procentEl.className = "stan-status " + (procentZysku >= 0 ? "pozytywny" : "negatywny");
         }
 
-        const currentSymbolEl = document.getElementById('current-symbol');
+        const currentSymbolEl = document.getElementById('aktualne-symbol');
         if (currentSymbolEl) currentSymbolEl.innerText = aktualnyRynek;
 
         const userHasEl = document.getElementById('user-has');
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnBuy = document.getElementById('action-buy');
     if (btnBuy) {
         btnBuy.addEventListener('click', function () {
-            const iloscInput = document.getElementById('trade-amount');
+            const iloscInput = document.getElementById('wymiana-amount');
             const ilosc = parseInt(iloscInput ? iloscInput.value : 1);
             if (isNaN(ilosc) || ilosc <= 0) return;
 
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnSell = document.getElementById('action-sell');
     if (btnSell) {
         btnSell.addEventListener('click', function () {
-            const iloscInput = document.getElementById('trade-amount');
+            const iloscInput = document.getElementById('wymiana-amount');
             const ilosc = parseInt(iloscInput ? iloscInput.value : 1);
             if (isNaN(ilosc) || ilosc <= 0) return;
 
