@@ -1,7 +1,8 @@
+import { bank } from './pieniadze.js';
+
 document.addEventListener('DOMContentLoaded', function () {
-    const poczatkowaGotowka = 100.00;
     let portfelGracza = {
-        gotowka: poczatkowaGotowka,
+        gotowka: bank.poczatkowaGotowka,
         aktywa: {
             KRYPTO: { ilosc: 0, sredniaCena: 0 },
             ZLOTO: { ilosc: 0, sredniaCena: 0 },
@@ -216,10 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 portfelGracza.gotowka += ilosc * aktualnaCena;
                 aktualneAktywo.ilosc -= ilosc;
-
-                if (aktualneAktywo.ilosc === 0) {
-                    aktualneAktywo.sredniaCena = 0;
-                }
 
                 aktualizujInterfejs();
             } else {

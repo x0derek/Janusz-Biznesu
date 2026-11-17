@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Biblioteki Chart.js (do wykresów) -->
+    <!-- Biblioteki Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script
@@ -15,8 +15,10 @@
     <script
         src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.2.0/dist/chartjs-chart-financial.min.js"></script>
 
-    <script src="js/main_script.js"></script>
-    <script src="js/gielda.js"></script>
+    <script type="module" src="js/pieniadze.js"></script>
+    <script type="module" src="js/pracownicy.js"></script>
+    <script type="module" src="js/popup.js"></script>
+    <script type="module" src="js/gielda.js"></script>
     <title>Janusz_Biznesu</title>
 </head>
 
@@ -29,7 +31,7 @@
                 <img src="obrazy/pracownicy/w-man-brown.svg" alt="uzytkownik_pp">
                 <div class="uzytkownik-info">
                     <div class="uzytkownik-nazwa">Janusz Karaś</div>
-                    <div class="uzytkownik-poziom">Poziom: 67</div>
+                    <div class="uzytkownik-poziom">Poziom: <span id="player-level">1</span></div>
                 </div>
                 <button id="ustawienia" name="setting">⚙️</button>
             </div>
@@ -37,25 +39,17 @@
             <div class="grid-item balans">
                 <div class="stan-konta">
                     <span class="stan-etykieta">Stan konta:</span>
-                    <span id="stan-procent" class="stan-status pozytywny">12.4%</span>
+                    <span id="stan-procent" class="stan-status pozytywny">0.0%</span>
                 </div>
                 <div class="balans-wartosc">
-                    <span id="player-cash">125 450</span> <span class="waluta">PLN</span>
+                    <span id="player-cash">100,00</span> <span class="waluta">PLN</span>
                 </div>
             </div>
             <!-- ksiegowy -->
             <div class="grid-item ksiegowy">KSIĘGOWY</div>
+
             <!-- lista pracownikow -->
-            <div class="grid-item pracownicy">
-                <!-- <div class="pracownik">
-                    <img src="obrazy/pracownicy/b-woman-ginger.svg" alt="pracownik_pp">
-                    <div class="info">
-                        <div class="nazwa">Amanda Ryc</div>
-                        <div class="poziom">Poziom: 2</div>
-                    </div>
-                    <button class="ustawienia">⚙️</button>
-                </div> -->
-            </div>
+            <div class="grid-item pracownicy" id="pracownicy-kontener"></div>
 
             <!-- gielda -->
             <div class="grid-item gielda">
