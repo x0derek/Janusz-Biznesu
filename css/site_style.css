@@ -1,3 +1,4 @@
+@import url('../colors.css');
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,15 @@ html, body {
     height: 100dvh;
     overflow: hidden; /* Blokuje wychodzenie poza krawędzie w Safari */
     position: fixed; /* Zapobiega przesuwaniu paska adresu w iOS przy gestach */
-    background: #151515;
+    background: var(--bg);
     overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  width: 7px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg);
+  border-radius: 6px;
 }

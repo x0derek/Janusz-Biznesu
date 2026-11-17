@@ -1,3 +1,4 @@
+@import url('../colors.css');
 .gielda {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -62,16 +63,16 @@
     align-items: center;
     justify-content: center;
     line-height: 1;
-    background: #ffffff1a;
+    background: var(--settings-bg);
     color: #cbd5e0;
-    border: 1px solid #ffffff33;
+    border: 1px solid var(--settings-border);
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 
 .zakladka-przyciskow:hover {
-    background: #ffffff40;
+    background: var(--settings-active);
     color: #fff;
 }
 

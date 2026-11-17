@@ -11,6 +11,8 @@
     background-color: #324f77ee;
     color: white;
     border-radius: 10px;
+    overflow-y: auto;
+
 }
 
 .popup-info {

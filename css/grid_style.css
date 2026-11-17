@@ -1,3 +1,4 @@
+@import url('../colors.css');
 .grid-container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -18,8 +19,8 @@
 }
 
 .grid-item {
-    position: relative; /* .tile-button jest absolute - bez tego pokrywa cały ekran */
-    background: #2a4365a8;
+    position: relative;
+    background: var(--tile);
     color: white;
     border-radius: 10px;
     font-size: 1.2rem;
@@ -28,8 +29,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--settings-bg);
+    box-shadow: 0 4px 6px var(--bg);
     
     /* pod Safari */
     min-width: 0;

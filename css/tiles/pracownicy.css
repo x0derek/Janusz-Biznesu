@@ -1,3 +1,4 @@
+@import url('../colors.css');
 .pracownicy {
     overflow-y: auto;
     display: flex;
@@ -48,9 +49,9 @@
 .pracownik-ustawienia {
     -webkit-appearance: none; /* Pod safari (wyłącza styl przycisków) */
     appearance: none;
-    background: #ffffff1a;
+    background: var(--settings-bg);
     color: white;
-    border: 1px solid #ffffff33;
+    border: 1px solid var(--settings-border);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -64,7 +65,7 @@
 
 .pracownik-ustawienia:active {
     transform: scale(0.95);
-    background: #ffffff40;
+    background: var(--settings-active);
 }
 
 .pracownik:nth-child(even){
@@ -145,13 +146,4 @@
         height: 35px;
         font-size: 1.3rem;
     }
-}
-
-::-webkit-scrollbar {
-  width: 7px; 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #151515;
-  border-radius: 6px;
 }
