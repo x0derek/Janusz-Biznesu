@@ -12,7 +12,7 @@
     height: 60px;
     border-radius: 50%;
     object-fit: contain;
-    border: 2px solid #ffffff44;
+    border: 2px solid var(--image-border);
     -webkit-user-drag: none; /* Pod safari (wyłacza przeciąganie obrazka) */
 }
 
@@ -30,7 +30,7 @@
 
 .uzytkownik .uzytkownik-poziom {
     font-size: 1.2rem;
-    color: #cbd5e0;
+    color: var(--label-text);
     font-weight: normal;
 }
 
@@ -38,7 +38,7 @@
     -webkit-appearance: none; /* Pod safari (wyłącza styl przycisków) */
     appearance: none;
     background: var(--settings-bg);
-    color: white;
+    color: var(--white);
     border: 1px solid var(--settings-border);
     border-radius: 50%;
     width: 50px;

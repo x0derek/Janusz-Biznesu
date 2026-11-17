@@ -26,7 +26,7 @@
     flex: 0 0 auto;
     font-size: 1.5rem;
     letter-spacing: 0.8px;
-    color: #cbd5e0;
+    color: var(--label-text);
     font-weight: 600;
     line-height: 1;
 }
@@ -64,7 +64,7 @@
     justify-content: center;
     line-height: 1;
     background: var(--settings-bg);
-    color: #cbd5e0;
+    color: var(--label-text);
     border: 1px solid var(--settings-border);
     cursor: pointer;
     transition: all 0.2s ease;
@@ -73,13 +73,13 @@
 
 .zakladka-przyciskow:hover {
     background: var(--settings-active);
-    color: #fff;
+    color: var(--white);
 }
 
 .zakladka-przyciskow.active {
-    background: #487ebb;
-    color: #fff;
-    border-color: #3182ce;
+    background: var(--gielda-buttons);
+    color: var(--white);
+    border-color: var(--gielda-buttons-border);
     box-shadow: 0 2px 6px rgba(49, 130, 206, 0.4);
 }
 
@@ -103,7 +103,7 @@
 .gielda-cena{
     align-items: center;
     font-size: 1.25rem;
-    color: #a0aec0;
+    color: var(--gielda-user-info);
     white-space: nowrap;
 }
 
@@ -111,7 +111,7 @@
     display: flex;
     align-items: center;
     font-size: 1.15rem;
-    color: #a0aec0;
+    color: var(--gielda-user-info);
     white-space: nowrap;
 }
 
@@ -124,10 +124,10 @@
 .wymiana-input {
     grid-column: 1 / -1;
     width: 120px;
-    background: #1a202c;
-    border: 1px solid #4a5568;
+    background: var(--trade-input);
+    border: 1px solid var(--trade-input-border);
     border-radius: 6px;
-    color: #fff;
+    color: var(--white);
     text-align: center;
     font-size: 1rem;
     padding: 6px;
@@ -136,7 +136,7 @@
 }
 
 .wymiana-input:focus {
-    border-color: #48bb78;
+    border-color: var(--green);
 }
 
 .wymiana-przycisk {
@@ -157,25 +157,25 @@
 }
 
 .przycisk-kup {
-    background: #48bb78;
-    color: #ffffff;
-    border: 1px solid #38a169;
+    background: var(--green);
+    color: var(--white)fff;
+    border: 1px solid var(--gielda-buy-button-border);
 }
 
 .przycisk-kup:hover {
-    background: #38a169;
-    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+    background: var(--gielda-buy-button-border);
+    box-shadow: 0 4px 12px var(--gielda-buy-button-hover);
 }
 
 .przycisk-sprzedaj {
-    background: #f56565;
-    color: #ffffff;
-    border: 1px solid #e53e3e;
+    background: var(--red);
+    color: var(--white)fff;
+    border: 1px solid var(--gielda-sell-button-border);
 }
 
 .przycisk-sprzedaj:hover {
-    background: #e53e3e;
-    box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+    background: var(--gielda-sell-button-border);
+    box-shadow: 0 4px 12px var(--gielda-sell-button-hover);
 }
 
 .gielda-wyglad {

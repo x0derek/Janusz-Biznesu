@@ -20,7 +20,7 @@
 .stan-etykieta {
     font-size: 1.5rem;
     letter-spacing: 0.8px;
-    color: #cbd5e0;
+    color: var(--label-text);
     font-weight: 600;
     line-height: 1;
 }
@@ -37,45 +37,45 @@
 }
 
 .stan-status.pozytywny {
-    background: #48bb7833;
-    color: #48bb78;
-    border: 1px solid #48bb784d;
+    background: var(--green)33;
+    color: var(--gielda-buy-button);
+    border: 1px solid var(--gielda-buy-button)4d;
 }
 
 .stan-status.pozytywny::before {
     content: "+ ";
-    color: #48bb78;
+    color: var(--gielda-buy-button);
     font-weight: bold;
 }
 
 .stan-status.pozytywny::after {
     content: " ↑";
-    color: #48bb78;
+    color: var(--gielda-buy-button);
     font-weight: bold;
 }
 
 .stan-status.negatywny {
-    background: #e4575733;
-    color: #f56565;
-    border: 1px solid #993b3b4d;
+    background: var(--balans-negative-bg);
+    color: var(--red);
+    border: 1px solid var(--balans-negative-border);
 }
 
 .stan-status.negatywny::before {
     content: "- ";
-    color: #f56565;
+    color: var(--red);
     font-weight: bold;
 }
 
 .stan-status.negatywny::after {
     content: " ↓";
-    color: #f56565;
+    color: var(--red);
     font-weight: bold;
 }
 
 .balans-wartosc {
     font-size: 2rem;
     font-weight: 800;
-    color: white;
+    color: var(--white);
     letter-spacing: -0.5px;
     white-space: nowrap;
     display: flex;
@@ -86,7 +86,7 @@
 
 .balans-wartosc .waluta {
     font-size: 1.3rem;
-    color: #48bb78;
+    color: var(--gielda-buy-button);
     font-weight: 700;
     margin-left: 4px;
 }

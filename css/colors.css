@@ -4,4 +4,21 @@
     --settings-bg: #ffffff1a;
     --settings-border: #ffffff33;
     --settings-active: #ffffff40;
+    --image-border: #ffffff44;
+    --label-text: #cbd5e0;
+    --employee-bg-even: #314b70a8;
+    --white: #ffffff;
+    --gielda-buttons: #487ebb;
+    --gielda-buttons-border: #3182ce;
+    --gielda-user-info: #a0aec0;
+    --trade-input: #1a202c;
+    --trade-input-border: #4a5568;
+    --green: #48bb78;
+    --gielda-buy-button-border: #38a169;
+    --gielda-buy-button-hover: #48bb784d;
+    --red: #f56565;
+    --gielda-sell-button-border: #e53e3e;
+    --gielda-sell-button-hover: #f565654d;
+    --balans-negative-bg: #e4575733;
+    --balans-negative-border: #993b3b4d;
 }
